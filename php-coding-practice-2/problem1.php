@@ -2,30 +2,34 @@
 #pattern 1
 
 
-$n  = 5;
+$n  = readline("enter a number: \n");
     
 #pattern 1
      
          echo "Pattern 1:\n";
-         for($i  = 1; $i <= 5; $i++)
-         echo "* ";
-         echo "\n";
-     
+
+         for($i=0; $i<$n; $i++){
+            echo "* ";
+            echo "\n";
+              
+          }
+         
 #pattern 2
      
          echo "pattern 2:\n";
-         for($i = 1; $i <= 5; $i++)
-         echo "* * * * *\n";
+
+         for($i=0; $i<$n; $i++)
+           echo "* * * * *\n";
      
 #pattern 3     
     
       echo "pattern 3:\n";
 
-         for($i = 0; $i < 5; $i++) {
-           for($j = 0; $j < 5; $j++){
-               if((($i==0)||($j==0)) || (($i==4)||($j==4))) 
+         for($i=0; $i<$n; $i++) {
+           for($j=0; $j<$n; $j++){
+               if((($i==0)||($j==0))||(($i==$n-1)||($j==$n-1))) 
               {
-                echo " *";
+                echo "* ";
                }
                else{
                 echo "  ";
@@ -37,14 +41,15 @@ $n  = 5;
          }
     
  #pattern 4      
+          
           echo "pattern 4:\n";
 
-             for($i = 5; $i > 0; $i--) {
-               for($j = 2; $j <= $i; $j++){ 
+             for($i=$n; $i>0; $i--) {
+               for($j=1; $j<$i; $j++){ 
                 echo " ";
                  }
-                 for($k=5; $k>=$i; $k--){
-                 echo " *";
+                 for($k=$n; $k>=$i; $k--){
+                 echo "* ";
                }
                echo "\n";
              }
@@ -53,8 +58,9 @@ $n  = 5;
 #pattern 5
      
          echo "pattern 5:\n";
-         for($i = 1; $i <= 5; $i++){
-            for($j = 0;$j < $i; $j++){
+         
+         for($i=1; $i<=$n; $i++){
+            for($j=0; $j<$i; $j++){
              echo "* ";
              }
              echo "\n";
@@ -63,8 +69,9 @@ $n  = 5;
 #pattern 6
     
          echo "pattern 6:\n";
-         for($i = 5; $i > 0; $i--){
-             for($j = 0; $j < $i; $j++){
+         
+         for($i=$n; $i>0; $i--){
+             for($j=0; $j<$i; $j++){
              echo "* ";
              }
              echo "\n";
@@ -74,53 +81,55 @@ $n  = 5;
 #pattern 7
       
          echo "pattern 7:\n";
-            for($i = 0; $i < 5; $i++) {
-             for($j = 1; $j <= 5; $j++){ 
-              if(($j==$i) || ($j<$i)){
-               echo "  ";
+            
+         for($i=0; $i<$n; $i++){
+             for($j=0; $j<$n; $j++){ 
+              if($j<$i)
+                {
+                 echo "  ";
+                }
+                else
+                {
+                 echo "* ";
+                }
              }
-               else{
-              echo "* ";
-             }
-          }
-             echo "\n";
+              echo "\n";
          
-         }
+          }
 
 #pattern 8         
      
          echo "pattern 8:\n";
-            for($i = 5; $i > 0; $i--) {
-             for($j = 1; $j <= 5; $j++){ 
-              if($j < $i){
+            
+         for($i=$n; $i>0; $i--){
+             for($j=1; $j<=$n; $j++){ 
+              if($j<$i){
                    echo "  ";
                   }
                   else{
-                   echo " *";
+                   echo "* ";
                   }
              }
                echo "\n";
         
-            }
+          }
     
 
 #pattern 9
 
      echo "pattern 9:\n";
 
-     for($i = 0; $i < 5; $i++) {
-       for($j = 0; $j < 5; $j++){
-        if((($j==0)&&($i==1)) || (($j==1)&&($i==1)) || (($j==2)&&($i==1)) || (($j==4)&&($i==1)) 
-        || (($j==0)&&($i==2)) || (($j==1)&&($i==2)) || (($j==3)&&($i==2)) || (($j==4)&&($i==2))
-        || (($j==0)&&($i==3)) || (($j==2)&&($i==3)) || (($j==3)&&($i==3)) || (($j==4)&&($i==3)))
-          {
-            echo "  ";
-           }
-           else{
-            echo " #";
-           }
+     for($i=0; $i<$n; $i++) {
+       for($j=0; $j<$n; $j++){
+         if(($i==0) || ($i==$n-1) || ($j==$n-$i-1))
+           {
+             echo "# ";
+            }
+            else{
+             echo "  ";
+            }
         
-         }
+        }
       
        echo "\n";
      }  
@@ -128,41 +137,57 @@ $n  = 5;
 #pattern 10     
      echo "pattern 10:\n";
 
-     for($i = 0; $i < 5; $i++) {
-       for($j = 0; $j < 5; $j++){
-        if((($j==0)&&($i==1)) || (($j==2)&&($i==1)) || (($j==3)&&($i==1)) || (($j==4)&&($i==1)) 
-        || (($j==0)&&($i==2)) || (($j==1)&&($i==2)) || (($j==3)&&($i==2)) || (($j==4)&&($i==2))
-        || (($j==0)&&($i==3)) || (($j==1)&&($i==3)) || (($j==2)&&($i==3)) || (($j==4)&&($i==3)))
-          {
-            echo "  ";
+     for($i=0; $i<$n; $i++) {
+       for($j=0; $j<$n; $j++){
+         if(($i==0) || ($i==$n-1) || ($j==$i))
+           {
+             echo "# ";
            }
-           else{
-            echo " #";
+            else{
+             echo "  ";
            }
         
-         }
+        }
       
-       echo "\n";
-     }
+         echo "\n";
+      }
      
 #pattern 11     
 
      echo "pattern 11:\n";
 
-     for($i = 0; $i < 5; $i++) {
-       for($j = 0; $j < 5; $j++){
-        if((($j==0)&&($i==1)) || (($j==2)&&($i==1)) ||(($j==4)&&($i==1)) 
-        || (($j==0)&&($i==2)) || (($j==1)&&($i==2)) || (($j==3)&&($i==2)) || (($j==4)&&($i==2))
-        || (($j==0)&&($i==3)) || (($j==2)&&($i==3)) ||(($j==4)&&($i==3)))
-          {
-            echo "  ";
+     for($i=0; $i<$n; $i++) {
+       for($j=0; $j<$n; $j++){
+        if(($i==0)||($i==$n-1)||($j==$i)||($j==$n-$i-1))
+           {
+             echo "# ";
            }
-           else{
-            echo " #";
+            else{
+              echo "  ";
            }
         
-         }
+        }
       
-       echo "\n";
-     }
+        echo "\n";
+      }
+
+# pattern 12      
+
+      echo "pattern 12:\n";
+
+      for($i=0; $i<$n; $i++) {
+        for($j=0; $j< $n; $j++){
+         if(($i==0)||($i==$n-1)||($j==$i)||($j==$n-$i-1)||($j==0)||($j==$n-1))
+            {
+              echo "# ";
+            }
+             else{
+               echo "  ";
+            }
+         
+         }
+       
+         echo "\n";
+       }
+       
 ?>
